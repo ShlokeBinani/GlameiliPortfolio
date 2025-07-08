@@ -55,6 +55,12 @@ export default function Navbar() {
             >
               Contact
             </button>
+            <a 
+              href="/admin"
+              className="text-beige-100 hover:text-beige-200 transition-colors duration-300"
+            >
+              Admin
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -98,6 +104,12 @@ export default function Navbar() {
               >
                 Contact
               </button>
+              <a 
+                href="/admin"
+                className="text-beige-100 hover:text-beige-200 transition-colors duration-300 text-left"
+              >
+                Admin
+              </a>
             </div>
           </div>
         )}

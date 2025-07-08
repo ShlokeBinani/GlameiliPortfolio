@@ -1,40 +1,20 @@
 import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { gsap } from "gsap";
+import type { GalleryImage } from "@shared/schema";
 
 type GalleryCategory = 'residential' | 'commercial' | null;
 
 export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState<GalleryCategory>(null);
 
-  const residentialImages = [
-    {
-      src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-      alt: "Modern living room design"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-      alt: "Luxury bedroom interior"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-      alt: "Modern kitchen design"
-    }
-  ];
+  const { data: allImages } = useQuery<GalleryImage[]>({
+    queryKey: ["/api/gallery"],
+  });
 
-  const commercialImages = [
-    {
-      src: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-      alt: "Modern office interior"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-      alt: "Restaurant interior design"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-      alt: "Retail space design"
-    }
-  ];
+  const activeImages = allImages?.filter(img => img.isActive) || [];
+  const residentialImages = activeImages.filter(img => img.category === 'residential');
+  const commercialImages = activeImages.filter(img => img.category === 'commercial');
 
   const handleCategoryClick = (category: GalleryCategory) => {
     setSelectedCategory(category);
@@ -113,25 +93,37 @@ export default function Gallery() {
           <div id="gallery-images" className="mt-12">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {selectedCategory === 'residential' && 
-                residentialImages.map((image, index) => (
-                  <div key={index} className="gallery-item">
+                residentialImages.map((image) => (
+                  <div key={image.id} className="gallery-item">
                     <img 
-                      src={image.src}
-                      alt={image.alt}
+                      src={image.imageUrl}
+                      alt={image.title}
                       className="w-full h-64 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
                     />
+                    <div className="mt-2">
+                      <h4 className="text-beige-100 font-medium">{image.title}</h4>
+                      {image.description && (
+                        <p className="text-beige-200 text-sm">{image.description}</p>
+                      )}
+                    </div>
                   </div>
                 ))
               }
               
               {selectedCategory === 'commercial' && 
-                commercialImages.map((image, index) => (
-                  <div key={index} className="gallery-item">
+                commercialImages.map((image) => (
+                  <div key={image.id} className="gallery-item">
                     <img 
-                      src={image.src}
-                      alt={image.alt}
+                      src={image.imageUrl}
+                      alt={image.title}
                       className="w-full h-64 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
                     />
+                    <div className="mt-2">
+                      <h4 className="text-beige-100 font-medium">{image.title}</h4>
+                      {image.description && (
+                        <p className="text-beige-200 text-sm">{image.description}</p>
+                      )}
+                    </div>
                   </div>
                 ))
               }
