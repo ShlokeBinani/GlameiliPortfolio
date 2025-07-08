@@ -7,7 +7,8 @@ A beautiful interior design portfolio website with a clean, modern interface.
 ✅ **No Admin Panel** - Simple file-based image management
 ✅ **No Database Required** - Images are served directly from folders
 ✅ **Persistent Glameili Animation** - Beautiful landing page animation that doesn't fade
-✅ **Before/After Transitions** - Interactive fade transitions for transformation showcases
+✅ **Hero Showcase** - Multiple before/after pairs with "See Complete" button transitions
+✅ **Gallery Before/After** - Interactive fade transitions in gallery categories
 ✅ **Interactive About Section** - Hover on text to see pixelation effect
 ✅ **Active Contact Form** - Connected to Formspree for real message delivery
 ✅ **Cross-Platform** - Works on Windows, macOS, and Linux
@@ -30,8 +31,34 @@ The website will be available at `http://localhost:5000`
 
 ## Managing Images
 
-### Adding Images
-Simply copy your images to the `public/images/gallery/` folder:
+### Hero Showcase Images (With "See Complete" Button)
+For the main hero section with before/after transitions, put your images in:
+
+```
+public/images/showcase/
+├── living-room-before.jpg      👈 Your before images
+├── living-room-after.jpg       👈 Your after images  
+├── kitchen-before.jpg
+├── kitchen-after.jpg
+├── bedroom-before.jpg
+├── bedroom-after.jpg
+└── office-before.png
+└── office-after.png
+```
+
+**To add more image pairs:**
+1. Add your images to `public/images/showcase/`
+2. Edit `client/src/components/Hero.tsx` and add to the `imagePairs` array:
+```javascript
+{
+  before: "/images/showcase/your-project-before.jpg",
+  after: "/images/showcase/your-project-after.jpg", 
+  title: "Your Project Title"
+}
+```
+
+### Gallery Images 
+For the main gallery section, copy your images to:
 
 ```
 public/images/gallery/
@@ -104,7 +131,15 @@ The contact form is fully functional and connected to Formspree! Messages submit
 - **Smooth Animations**: Beautiful GSAP-powered fade transitions
 - **Mixed Content**: Mix paired and single images in the same category
 
-### How to Create Before/After Pairs:
+### Hero Showcase Features:
+- **"See Complete" Button**: Click to transition between before/after images
+- **Multiple Image Pairs**: Cycle through different projects automatically
+- **Navigation Arrows**: Click left/right to browse image pairs manually
+- **Auto-Advance**: Images change every 8 seconds automatically
+- **Dot Navigation**: Click dots to jump to specific image pairs
+- **Smooth Transitions**: Beautiful GSAP-powered fade animations
+
+### How to Create Gallery Before/After Pairs:
 1. **Name your files** with "before" and "after" in the filename:
    ```
    kitchen-renovation-before.jpg
