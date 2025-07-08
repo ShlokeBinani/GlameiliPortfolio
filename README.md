@@ -120,6 +120,7 @@ The contact form is fully functional and connected to Formspree! Messages submit
 ### Navigation
 - **Smooth Scrolling**: All navigation links smoothly scroll to their sections
 - **Fixed Header**: Navigation stays visible while scrolling
+- **Clean Layout**: Streamlined sections without duplication
 
 ## No Database Setup Required!
 
