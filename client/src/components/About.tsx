@@ -41,25 +41,10 @@ export default function About() {
               About Glameili
             </h2>
             
-            <div className="scramble-text text-xl leading-relaxed text-ochre-700 max-w-3xl mb-12">
+            <div className="scramble-text text-xl leading-relaxed text-ochre-700 max-w-3xl">
               <ScrambledText 
                 text="Glameili is a premier interior décor company dedicated to transforming homes and workplaces with innovative designs and impeccable craftsmanship."
               />
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-ochre-600 mb-2">5+</div>
-                <div className="text-ochre-700">Years Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-ochre-600 mb-2">100+</div>
-                <div className="text-ochre-700">Projects Completed</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-ochre-600 mb-2">50+</div>
-                <div className="text-ochre-700">Happy Clients</div>
-              </div>
             </div>
           </div>
         </div>
