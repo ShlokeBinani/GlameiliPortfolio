@@ -7,6 +7,8 @@ A beautiful interior design portfolio website with a clean, modern interface.
 ✅ **No Admin Panel** - Simple file-based image management
 ✅ **No Database Required** - Images are served directly from folders
 ✅ **Persistent Glameili Animation** - Beautiful landing page animation that doesn't fade
+✅ **Interactive About Section** - Hover on text to see pixelation effect
+✅ **Active Contact Form** - Connected to Formspree for real message delivery
 ✅ **Cross-Platform** - Works on Windows, macOS, and Linux
 ✅ **Responsive Design** - Looks great on all devices
 
@@ -72,6 +74,25 @@ Images are automatically:
 ├── public/images/   # Your image files go here
 └── shared/          # Shared TypeScript types
 ```
+
+## Contact Form
+
+The contact form is fully functional and connected to Formspree! Messages submitted through the website will be delivered directly to your email.
+
+- ✅ Form ID: `xvgrjkqq` (already configured)
+- ✅ Real-time form validation
+- ✅ Success/error notifications
+- ✅ Responsive design
+
+## Interactive Features
+
+### About Section
+- **Hover Effect**: When you hover over the about text, it gets a pixelated effect with enhanced contrast and saturation
+- **Smooth Transitions**: Clean animations for all interactions
+
+### Navigation
+- **Smooth Scrolling**: All navigation links smoothly scroll to their sections
+- **Fixed Header**: Navigation stays visible while scrolling
 
 ## No Database Setup Required!
 

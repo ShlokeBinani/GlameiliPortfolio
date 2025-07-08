@@ -14,8 +14,8 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Replace YOUR_FORM_ID with your actual Formspree form ID
-      const formspreeEndpoint = `https://formspree.io/f/${process.env.REACT_APP_FORMSPREE_ID || process.env.VITE_FORMSPREE_ID || 'YOUR_FORM_ID'}`;
+      // Using your Formspree form ID
+      const formspreeEndpoint = 'https://formspree.io/f/xvgrjkqq';
       
       const response = await fetch(formspreeEndpoint, {
         method: 'POST',

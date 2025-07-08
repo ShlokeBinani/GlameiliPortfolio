@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import ScrambledText from "./ScrambledText";
 import glamLogo from "@assets/glam_logo-removebg-preview_1751912831055.png";
 
 export default function About() {
@@ -41,10 +40,26 @@ export default function About() {
               About Glameili
             </h2>
             
-            <div className="scramble-text text-xl leading-relaxed text-ochre-700 max-w-3xl">
-              <ScrambledText 
-                text="Glameili is a premier interior décor company dedicated to transforming homes and workplaces with innovative designs and impeccable craftsmanship."
-              />
+            <div className="text-xl leading-relaxed text-ochre-700 max-w-3xl">
+              <p 
+                className="transition-all duration-300 cursor-pointer"
+                style={{
+                  filter: 'none',
+                  transition: 'filter 0.3s ease, transform 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.filter = 'contrast(1.2) saturate(1.3) blur(0.5px)';
+                  e.currentTarget.style.transform = 'scale(1.02)';
+                  e.currentTarget.style.imageRendering = 'pixelated';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.filter = 'none';
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.imageRendering = 'auto';
+                }}
+              >
+                Glameili is a premier interior décor company dedicated to transforming homes and workplaces with innovative designs and impeccable craftsmanship.
+              </p>
             </div>
           </div>
         </div>
