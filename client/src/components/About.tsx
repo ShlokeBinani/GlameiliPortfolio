@@ -12,7 +12,7 @@ export default function About() {
   return (
     <section 
       id="about" 
-      className="parallax-container min-h-screen bg-beige-200 py-20"
+      className="parallax-container bg-beige-200 py-16"
     >
       <div 
         className="parallax-bg"
@@ -22,25 +22,25 @@ export default function About() {
       />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-          <div className="lg:w-1/3 mb-8 lg:mb-0">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-6 max-w-5xl mx-auto">
+          <div className="lg:w-2/5 mb-6 lg:mb-0 flex justify-center">
             <div className="logo-animation">
-              <div className="w-48 h-48 bg-ochre-500 rounded-full flex items-center justify-center shadow-2xl">
+              <div className="w-40 h-40 bg-ochre-500 rounded-full flex items-center justify-center shadow-2xl">
                 <img 
                   src={glamLogo} 
                   alt="Glameili Logo" 
-                  className="w-32 h-32 object-contain"
+                  className="w-28 h-28 object-contain"
                 />
               </div>
             </div>
           </div>
           
-          <div className="lg:w-2/3 lg:pl-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-ochre-600 mb-8">
+          <div className="lg:w-3/5 lg:pl-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-ochre-600 mb-6">
               About Glameili
             </h2>
             
-            <div className="text-xl leading-relaxed text-ochre-700 max-w-3xl">
+            <div className="text-xl leading-relaxed text-ochre-700">
               <p 
                 className="transition-all duration-300 cursor-pointer"
                 style={{

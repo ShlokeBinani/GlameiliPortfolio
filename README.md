@@ -115,6 +115,8 @@ The contact form is fully functional and connected to Formspree! Messages submit
 
 ### About Section
 - **Hover Effect**: When you hover over the about text, it gets a pixelated effect with enhanced contrast and saturation
+- **Improved Layout**: Logo and content are properly spaced and centered for better visual balance
+- **Responsive Design**: Clean layout that works perfectly on all screen sizes
 - **Smooth Transitions**: Clean animations for all interactions
 
 ### Navigation
